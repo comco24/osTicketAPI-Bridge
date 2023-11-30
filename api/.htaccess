@@ -1,0 +1,16 @@
+RewriteEngine on
+
+RewriteRule ^act/(.*)/$ project/src/public/admin/inc/action.php?action_id=$1 [L]
+
+RewriteRule ^app/index.html$ project/src/public/admin/index.php [L]
+RewriteRule ^app/(.*).html$ project/src/public/admin/index.php?pg=$1 [L]
+RewriteRule ^app/$ project/src/public/admin/index.php [L]
+
+RewriteRule ^msg/(i|q)/(.*)/(.*)-([0-9]+).html$ project/src/public/admin/index.php?pg=msg&typ=$1&a=$2&b=$3&id=$4 [L]
+RewriteRule ^msg/(i|q)/(.*)/([0-9]+).html$ project/src/public/admin/index.php?pg=msg&typ=$1&a=$2&id=$3 [L]
+RewriteRule ^msg/(i|q)/(.*)/(.*).html$ project/src/public/admin/index.php?pg=msg&typ=$1&a=$2&b=$3 [L]
+
+RewriteRule ^ticket/ project/src/inc/action.php?action_id=send-form [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [L]

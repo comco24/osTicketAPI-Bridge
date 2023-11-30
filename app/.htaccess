@@ -1,0 +1,14 @@
+RewriteEngine on
+RewriteRule ^msg/(i|q|e)/(.*)/(.*)-([0-9]+).html$ index.php?pg=msg&typ=$1&a=$2&b=$3&id=$4 [L]
+RewriteRule ^msg/(i|q|e)/(.*)/([0-9]+).html$ index.php?pg=msg&typ=$1&a=$2&id=$3 [L]
+RewriteRule ^msg/(i|q|e)/(.*)/(.*).html$ index.php?pg=msg&typ=$1&a=$2&b=$3 [L]
+RewriteRule ^msg/(i|q|e)/(.*).html$ index.php?pg=msg&typ=$1&a=$2 [L]
+
+RewriteRule ^act/(.*)/([0-9]+)/b/(.*)/ inc/action.php?action_id=$1&id=$2&back-url=$3 [L]
+RewriteRule ^act/(.*)/([0-9]+)/ inc/action.php?action_id=$1&id=$2 [L]
+RewriteRule ^act/(.*)/ inc/action.php?action_id=$1 [L]
+
+RewriteRule ^(.*)/strana-([0-9]+).html index.php?pg=$1&page=$2 [L]
+RewriteRule ^(.*)/([0-9]+).html index.php?pg=$1&id=$2 [L]
+RewriteRule ^(.*)/(.*).html index.php?pg=$1&action=$2 [L]
+RewriteRule ^(.*).html index.php?pg=$1 [L]

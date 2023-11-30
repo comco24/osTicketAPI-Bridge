@@ -1,0 +1,27 @@
+RewriteEngine on
+RewriteRule ^index.html$  index.php [L]
+
+RewriteRule ^act/(.*)/(.*)/(.*)/([0-9]+)/$ inc/action.php?action_id=$1&id=$2&id2=$3&id3=$4 [L]
+RewriteRule ^act/(.*)/([0-9]+)/(.*)/(.*)/$ inc/action.php?action_id=$1&id=$2&valueA=$3&valueB=$4 [L]
+RewriteRule ^act/(.*)/([0-9]+)/([0-9]+)/$ inc/action.php?action_id=$1&id=$2&id2=$3 [L]
+RewriteRule ^act/(.*)/(.*)/([0-9]+)/$ inc/action.php?action_id=$1&modul=$2&id=$3 [L]
+RewriteRule ^act/(.*)/([0-9]+)/$ inc/action.php?action_id=$1&id=$2 [L]
+RewriteRule ^act/(.*)/(.*)/$ inc/action.php?action_id=$1_$2 [L]
+RewriteRule ^act/(.*)/$ inc/action.php?action_id=$1 [L]
+RewriteRule ^act/$ inc/action.php [L]
+
+RewriteRule ^app/(.*)/([0-9]+)/(.*)/p-([0-9]+).html$ index.php?pg=$1&id=$2&action=$3&page=$4 [L]
+RewriteRule ^app/(.*)/([0-9]+)/p-([0-9]+).html$ index.php?pg=$1&id=$2&page=$3 [L]
+RewriteRule ^app/(.*)/([0-9]+)/(.*)/([0-9]+)/(.*).html$ index.php?pg=$1&id=$2&action=$3-$5&sub_id=$4 [L]
+RewriteRule ^app/(.*)/([0-9]+)/(.*)/([0-9]+).html$ index.php?pg=$1&id=$2&action=$3&sub_id=$4 [L]
+RewriteRule ^app/(.*)/([0-9]+)/(.*).html$ index.php?pg=$1&id=$2&action=$3 [L]
+RewriteRule ^app/(.*)/p-([0-9]+).html$ index.php?pg=$1&page=$2 [L]
+RewriteRule ^app/(.*)/(.*).html$ index.php?pg=$1&action=$2 [L]
+RewriteRule ^app/(.*)/([0-9]+)/(.*).html$ index.php?pg=$1&id=$2&action=$3 [L]
+RewriteRule ^app/(.*)/([0-9]+).html$ index.php?pg=$1&id=$2 [L]
+RewriteRule ^app/(.*).html$ index.php?pg=$1 [L]
+
+RewriteRule ^msg/(i|q)/(.*)/(.*)-([0-9]+).html$ index.php?pg=msg&typ=$1&a=$2&b=$3&id=$4 [L]
+RewriteRule ^msg/(i|q)/(.*)/([0-9]+).html$ index.php?pg=msg&typ=$1&a=$2&id=$3 [L]
+RewriteRule ^msg/(i|q)/(.*)/(.*).html$ index.php?pg=msg&typ=$1&a=$2&b=$3 [L]
+
